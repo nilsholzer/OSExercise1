@@ -6,3 +6,6 @@ pointers
 
 #ignore the print file in p2
 print
+
+#ignore the parseint file
+parseint
