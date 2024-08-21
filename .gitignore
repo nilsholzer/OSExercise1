@@ -1,0 +1,8 @@
+#ignore all .o files
+*.o
+
+#ignore the pointers file in p1
+pointers
+
+#ignore the print file in p2
+print

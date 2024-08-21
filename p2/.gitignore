@@ -1,5 +1,0 @@
-#ingore all .o files
-*.o
-
-#ignore print file
-print
