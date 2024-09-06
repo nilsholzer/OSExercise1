@@ -28,6 +28,13 @@ void setN(uint64_t *A, size_t n)
 {
     (void) A;
     (void) n;
+
+    uint64_t elementIndex = n / 64;
+    uint64_t elementBit = n % 64;
+
+    uint64_t mask = 1 << elementBit;
+
+    A[elementIndex] |= mask;
 }
 
 /*
