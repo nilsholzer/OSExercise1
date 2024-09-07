@@ -50,8 +50,6 @@ void clrN(uint64_t *A, size_t n)
  */
 uint64_t rot(uint64_t i, int n)
 {
-    (void) i;
-    (void) n;
-
-    return 0;
+    n = ((n % 64) + 64) % 64;
+    return  (i >> n) | (i << (64 - n));
 }
