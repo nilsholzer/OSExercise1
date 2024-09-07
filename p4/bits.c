@@ -17,7 +17,6 @@ int getN(uint64_t *A, size_t n)
     uint64_t mask = 1 << elementBit;
     uint64_t masked_n = element & mask;
     uint64_t bit = masked_n >> elementBit;
-    
     return bit;
 }
 
@@ -26,15 +25,12 @@ int getN(uint64_t *A, size_t n)
  */
 void setN(uint64_t *A, size_t n)
 {
-    (void) A;
-    (void) n;
+    size_t element = n / 64;
+    size_t bit = n % 64;
 
-    uint64_t elementIndex = n / 64;
-    uint64_t elementBit = n % 64;
+    uint64_t mask = (uint64_t) 1 << bit;
 
-    uint64_t mask = 1 << elementBit;
-
-    A[elementIndex] |= mask;
+    A[element] |= mask;
 }
 
 /*
@@ -42,8 +38,10 @@ void setN(uint64_t *A, size_t n)
  */
 void clrN(uint64_t *A, size_t n)
 {
-    (void) A;
-    (void) n;
+    size_t element = n / 64;
+    size_t bit = n % 64;
+    uint64_t mask = (uint64_t) 1 << bit;
+    A[element] &= ~mask;
 }
 
 
